@@ -5,12 +5,12 @@ from figure import Figure
 class Circle(Figure):
     """Класс круг"""
 
-    def __init__(self, *args):
-        self.radius = args[0]
+    def __init__(self, radius: int | float):
+        self.radius = radius
 
-        if not isinstance(self.radius, int):
+        if not (isinstance(self.radius, int) or isinstance(self.radius, float)):
             raise ValueError(
-                f"Radius of square must be integer, now: radius = {self.radius}"
+                f"Radius of square must be integer or float, now: radius = {self.radius}"
             )
 
     @property

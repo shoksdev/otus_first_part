@@ -4,12 +4,12 @@ from figure import Figure
 class Square(Figure):
     """Класс квадрат"""
 
-    def __init__(self, *args):
-        self.side_a = args[0]
+    def __init__(self, side_a: int | float):
+        self.side_a = side_a
 
-        if not isinstance(self.side_a, int):
+        if not (isinstance(self.side_a, int) or isinstance(self.side_a, float)):
             raise ValueError(
-                f"Sides of square must be integer, now: side_a = {self.side_a}"
+                f"Sides of square must be integer or float, now: side_a = {self.side_a}"
             )
 
     @property
